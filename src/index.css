@@ -1,0 +1,122 @@
+:root {
+  /* ── Banking Color Palette ── */
+  --primary: #1A1A2E;         /* Royal Navy */
+  --primary-light: #2A2A4A;
+  --secondary: #D4AF37;       /* Gold Accent */
+  --secondary-light: #F4E4BC;
+  
+  --success: #1E7A34;
+  --danger: #DC3545;
+  --warning: #D97706;
+
+  /* ── Backgrounds ── */
+  --bg: #FDFBF7;              /* Warm Ivory Paper */
+  --bg-card: #FFFFFF;
+  --bg-input: #F5F3EF;
+  
+  /* ── Text ── */
+  --text-1: #1A1A2E;
+  --text-2: #5C6070;
+  --text-3: #A0A4B0;
+  
+  /* ── Borders & Shadows ── */
+  --border: #E4E1DA;
+  --shadow-sm: 0 2px 4px rgba(26,26,46,0.05);
+  --shadow: 0 4px 20px rgba(26,26,46,0.08);
+  --shadow-lg: 0 20px 40px rgba(26,26,46,0.12);
+
+  /* ── Layout ── */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --container-width: 1200px;
+  
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+  --bg: #111116;
+  --bg-card: #1C1C23;
+  --bg-input: #28282F;
+  --text-1: #EEEEF5;
+  --text-2: #9898A8;
+  --text-3: #55556A;
+  --border: #2A2A34;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg); /* Original Warm Ivory */
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(26,26,46,0.03) 25%, rgba(26,26,46,0.03) 26%, transparent 27%, transparent 74%, rgba(26,26,46,0.03) 75%, rgba(26,26,46,0.03) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(26,26,46,0.03) 25%, rgba(26,26,46,0.03) 26%, transparent 27%, transparent 74%, rgba(26,26,46,0.03) 75%, rgba(26,26,46,0.03) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+  color: var(--text-1);
+  direction: rtl; /* Forced RTL for Arabic project */
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Utility Classes ── */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
